@@ -1,0 +1,74 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWindowsForms>true</UseWindowsForms>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="LinqKit.Microsoft.EntityFrameworkCore" Version="5.0.26" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="5.0.8" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="5.0.8">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="ReportViewerCore.NETCore" Version="15.1.14" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="DataSets\DsAuthor.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>DsAuthor.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="DataSets\ListOfBooks.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>ListOfBooks.xsd</DependentUpon>
+    </Compile>
+    <Compile Update="Forms\StatisticsForm.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Forms\BooksForms.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Update="DataSets\DsAuthor.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DsAuthor.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="DataSets\ListOfBooks.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>ListOfBooks.Designer.cs</LastGenOutput>
+    </None>
+    <None Update="Reports\BookDetail.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Reports\ListAuthors.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Reports\AuthorSubReport.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Update="Reports\ListOfBooks.rdlc">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+
+</Project>
